@@ -1,8 +1,8 @@
 # cl100k_cipher
-Simple basic cipher, but we're rotating LLM tokens.
+Caesar cipher, but we're rotating LLM tokens 🤔
 
-Serve locally:
+Uses the `cl100k_base` tokenizer from OpenAI (The classic used by GPT 3.5 ~ 4.0)
 
-```bash
-npx serve .
-```
+### Usage
+Frontend only; Launch `index.html`  
+Requires http serving as we're using CDN
