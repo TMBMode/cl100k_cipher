@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cl100k_cipher</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="hero">
+        <p class="eyebrow">The LLM Native</p>
+        <h1>&lt;cl100k_cipher/&gt;</h1>
+        <p class="lede">
+          The Caesar Cipher, <br/> but rotating tokens from <span>cl100k_base</span> tokenizer.
+        </p>
+      </header>
+
+      <section class="controls" aria-label="Cipher controls">
+        <div class="control">
+          <label for="seed">Seed</label>
+          <div class="seed-row">
+            <input id="seed" type="text" value="13" />
+            <button id="randomize" type="button" class="seed-button" aria-label="Randomize seed">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
+            </button>
+          </div>
+          <p class="hint">Integer / Seed String; The "key"</p>
+        </div>
+        <div class="control action-row">
+          <div class="mode-toggle" role="group" aria-label="Cipher mode">
+            <input type="radio" name="mode" id="mode-encrypt" value="encrypt" checked />
+            <label for="mode-encrypt">* Encrypt</label>
+            <input type="radio" name="mode" id="mode-decrypt" value="decrypt" />
+            <label for="mode-decrypt">* Decrypt</label>
+          </div>
+        </div>
+      </section>
+
+      <main class="grid">
+        <section class="panel">
+          <header>
+            <h2>Input ></h2>
+            <span id="input-count">0 tokens</span>
+          </header>
+          <textarea id="input" placeholder="Type or paste text here..."></textarea>
+          <div class="token-view">
+            <div id="input-tokens" class="token-box" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <header>
+            <h2>Output ></h2>
+            <span></span>
+          </header>
+          <textarea id="output" readonly placeholder="Cipher output appears here..."></textarea>
+          <div class="token-view">
+            <div id="output-tokens" class="token-box" aria-live="polite"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
