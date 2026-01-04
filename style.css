@@ -30,7 +30,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(18px, 3vw, 28px);
-  animation: rise-in 0.6s ease-out;
 }
 
 .hero {
@@ -199,7 +198,6 @@ button:hover {
   padding: clamp(16px, 2.8vw, 24px);
   display: grid;
   gap: 14px;
-  animation: rise-in 0.6s ease-out;
 }
 
 .panel header {
@@ -266,15 +264,26 @@ textarea:read-only {
   min-height: 0;
 }
 
-@keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.footer {
+  padding: 8px 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-link {
+  display: inline-block;
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  transition: background 0.15s ease-out, transform 0.15s ease-out;
+}
+
+.footer-link:hover {
+  background: transparent;
+  transform: none;
 }
 
 @media (max-width: 700px) {
